@@ -1,0 +1,34 @@
+<CATALOGO>
+    <SERVICO>
+        <NOME>Banho</NOME>
+        <PRECO>35.00</PRECO>
+    </SERVICO>
+    <SERVICO>
+        <NOME>Tosa Higiênica</NOME>
+        <PRECO>65.00</PRECO>
+    </SERVICO>
+    <SERVICO>
+        <NOME>Tosa Geral (máquina)</NOME>
+        <PRECO>95.00</PRECO>
+    </SERVICO>
+    <SERVICO>
+        <NOME>Tosa Geral (tesoura)</NOME>
+        <PRECO>125.00</PRECO>
+    </SERVICO>
+    <SERVICO>
+        <NOME>Creche (diária avulsa)</NOME>
+        <PRECO>50.00</PRECO>
+    </SERVICO>
+    <SERVICO>
+        <NOME>Creche (semanal)</NOME>
+        <PRECO>200.00</PRECO>
+    </SERVICO>
+    <SERVICO>
+        <NOME>Creche (mensal)</NOME>
+        <PRECO>650.00</PRECO>
+    </SERVICO>
+    <SERVICO>
+        <NOME>Leva e Traz (km rodado)</NOME>
+        <PRECO>3.20</PRECO>
+    </SERVICO>
+</CATALOGO>

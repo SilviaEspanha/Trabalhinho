@@ -1,0 +1,58 @@
+RAFAEL RATEIRO TEODORO
+
+BANCO DE DADOS
+
+A)SELECT date_format(data_nascimento,'%d/%m/%y') from cliente;
+
+B) SELECT MAX(preco_custo) as maior_preco from produto;
+
+C)SELECT round(avg(valor_total),2) media_vendas FROM vendas;
+
+D)SELECT count(cod_cliente) FROM cliente;
+
+E)SELECT round(sum(valor_total),2) FROM vendas;
+
+F)SELECT round(max(preco_venda),2) FROM produto;
+
+G)SELECT DISTINCT tipo FROM produto;
+
+H)SELECT DISTINCT date_format(data_hora_venda,'%d/%m/%Y') FROM vendas;
+
+I)SELECT DISTINCT estado FROM cliente;
+
+J)SELECT * FROM produto ORDER BY nome;
+
+K)SELECT * from produto ORDER BY quant_estoque desc;
+
+L)SELECT nome,quant_estoque from produto WHERE tipo= 'Limpeza';
+
+M)SELECT DISTINCT tipo from produto ORDER BY tipo;
+
+N)UPDATE cliente SET nome='Rubens dos Santos Silva' WHERE cod_cliente = 111;
+
+O)UPDATE produto SET preco_venda = preco_venda *1.10;
+
+P)UPDATE produto SET preco_custo = preco_custo *1.06 WHERE preco_custo<6;
+
+Q)DELETE FROM produto WHERE cod_produto = 9, aconteceu um efeito cascata aonde o valor total dos rpodutos persistiu, porém a soma dos valores são outro
+então deve ser feito o comando UPDATE vendas SET valor_total =25 WHERE cod_venda = 4040 para ajustar;
+
+R)DELETE FROM produto WHERE cod_produto = 97, não houve incoscistencia no banco de dados por conta do codigo "97" não ter ligações no banco de dados;
+
+S)UPDATE itens_venda SET quantidade =2, subtotal=2*(SELECT preco_venda from produto WHERE cod_produto=99) WHERE cod_produto = 99;
+
+
+
+
+-DISTINC: NÃO DEIXA OS COMANDOS DO PROGRAMA SE REPETIREM, SE HÁ MAIS DE UMPRODUTO ELE SE ESPECIFICA 1 DE CADA.
+-ASC: ORDENA ITENS NA ORDEM CRESCENTE, NÃO É NECESSARIO SER COLOCADO EM ALGUNS CASOS, DEVE-SE COLOCAR ANTES DE "ASC" O COMANDO "ORDER BY"
+-DESC:ORDENA NA ORDEM DECRESCENTE, DEVE-SE COLOCAR ANTES DE "DESC" O COMANDO "ORDER BY"
+-PARA MULTIPLICAR DVEMOS FAZER "1.10", PARA ACHAR 20% FAZEMOS "0.20"
+-SELECT* FROM funcionario INNER JOIN dependente on funcionario.funcodigo = dependente.funcodigo;(INNER JOIN) Juntar comandos
+
+    
+                                         USO DO INNER JOIN
+
+-SELECT estudantes.nome, nacionalidade , cursopreferido, cursos.nome from estudantes INNER JOIN cursos on estudantes.cursopreferido = cursos.idcurso;
+-LETF JOIN: USADO PARA MOSTRA OS CODIGOS QUE SÃO JUNÇÕES ALÉM DE MOSTRAR OS CODIGOS NULOS OU VAZIOS.
+-RIGHT JOIN: USADO TAMBÉM PARA MOSTRAR OS CODIGOS QUE SE JUNTAM PORÉM NA OUTRA METADE DO PROGRAMA "LADO DIREITO"

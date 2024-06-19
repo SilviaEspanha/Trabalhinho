@@ -1,0 +1,65 @@
+        h1 {
+            color: blue;
+        }
+        h2 {
+            color: blueviolet;
+        }
+        p.justif {
+            text-align: justify;
+        }
+        p {
+            margin: 8px;
+            padding: 3px;
+            line-height: 1;
+        }
+        .borda {
+            width: 90%;
+            border: 0.5rem solid rgb(118, 188, 248);
+            padding: 1rem;
+            margin: 1.2rem;
+            align-content: center;
+        }
+        table,th,td {
+            border : 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td {
+            padding: 5px;
+        } 
+        .logotipo {
+            margin:auto;
+            width: 50%;
+            border:none;
+            justify-content: center;
+            
+        }
+        .figuras {
+            display: flex;
+            margin:auto;
+            width: 80%;
+            border:none;
+            justify-content: center;
+        }
+        .contato {
+            font-family:Arial;
+            font-size: 16px;
+        }
+        .menu {
+            /*fontes*/
+            line-height: 2;
+            font-family: arial, helvetica, sans-serif;
+            font-size: 1.05em;
+        }
+
+        .destaque {
+            font-weight: bold;
+        }
+    
+        .conteudo {
+            /*cores e fontes*/
+            color: blue;
+            background-color: #F0F0F0 ;
+            font-family: arial, helvetica, sans-serif;
+        }
+        
+       

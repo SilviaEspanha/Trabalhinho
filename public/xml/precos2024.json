@@ -1,0 +1,38 @@
+{
+    "CATALOGO": {
+      "SERVICO": [
+        {
+          "NOME": "Banho",
+          "PRECO": 35
+        },
+        {
+          "NOME": "Tosa Higiênica",
+          "PRECO": 65
+        },
+        {
+          "NOME": "Tosa Geral (máquina)",
+          "PRECO": 95
+        },
+        {
+          "NOME": "Tosa Geral (tesoura)",
+          "PRECO": 125
+        },
+        {
+          "NOME": "Creche (diária avulsa)",
+          "PRECO": 50
+        },
+        {
+          "NOME": "Creche (semanal)",
+          "PRECO": 200
+        },
+        {
+          "NOME": "Creche (mensal)",
+          "PRECO": 650
+        },
+        {
+          "NOME": "Leva e Traz (km rodado)",
+          "PRECO": 3.2
+        }
+      ]
+    }
+  }

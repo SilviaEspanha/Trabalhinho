@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino dos Focinhos</title>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+
+    
+</head>
+<body>
+    <script type="text/javascript" src="../js/script2.js"></script>
+    
+    <header class="o-header">
+        <h1 class="titulo">Reino dos Focinhos</h2>
+        <h2>Banho e Tosa, Creche, Hospedagem e Adestramento</h2>
+        <h3> Rua Amélia Bueno, 80  -  Campinas/SP  -  Brasil</h3>
+        <figure class="logotipo">
+            <img src="../img/logotipo.jpg" width="15%" height="15%" alt="Logo">
+        </figure>
+    </header>
+    <nav class="o-nav">
+        <ul class="menu">
+            <li> <a href= "../index.html">Voltar</a> </li>
+        </ul>
+    </nav>
+    <main class="o-main">
+        <div class="borda">
+            <h3>Preencha o formulário:</h3>
+            <form name="usuario">
+                <input type="text" name="nome_tutor" id="nomet" placeholder="Nome do Tutor" size="40px">
+                <br><br>
+                <input type="text" name="nome_pet" id="nomep"placeholder="Nome do Pet" size="40px">
+                <br><br>
+                <input type="date" id="data">
+                <br><br>
+                <label for="serv">Escolha um serviço:</label>
+                <select name="servico" id="servico">
+                    <option value="banho">Banho</option>
+                    <option value="tosah">Tosa Higiênica</option>
+                    <option value="tosagm">Tosa Geral Máquina</option>
+                    <option value="tosagt">Tosa Geral Tesoura</option>
+                    <option value="creched">Creche (diária)</option>
+                    <option value="creches">Creche (semanal)</option>
+                    <option value="crechem">Creche (mensal)</option>
+                    <option value="levatraz">Leva e Traz</option>
+                </select><br><br>          
+                <input type="text" name="obs" id="obs" value="Obs: " size="40px">
+                <br><br>
+                <input type=button value="Exibir_Json" id="Exibir_Json" onclick="exibir()">    
+            </form>
+        </div>
+        <div class="borda">
+            <h3>Serviço a ser realizado:</h3>
+            <div id="result">
+         
+            </div> 
+            <input type="submit" value="Gravar" id="Gravar" disabled>
+            <input type="submit" value="Descartar" id="Descartar" onclick="descartar()">
+        </div>
+    </main>
+    <footer class="o-footer">
+        <h3>Contatos:</h3>
+        <container class="contato">
+            <ul>
+                <li>Celular: (19) 9 8947 6402</li>
+                <li>e-mail: reinodosfocinhos@gmail.com</li>
+                <li>Redes sociais: facebook e instagram</li>
+            </ul>
+            <br>
+        </container>
+    </footer>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    
+    import { getDatabase, ref, get, set, child, push, update, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+  
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB7d2_gDpVAmd9_eJiBm6HvDzENZyZrM7s",
+      authDomain: "trabalhinho-43003.firebaseapp.com",
+      databaseURL: "https://trabalhinho-43003-default-rtdb.firebaseio.com",
+      projectId: "trabalhinho-43003",
+      storageBucket: "trabalhinho-43003.appspot.com",
+      messagingSenderId: "123911645743",
+      appId: "1:123911645743:web:537c7b5a3d943f0a34f4da"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db=getDatabase();
+  
+        
+        let bt_gravar=document.getElementById("Gravar");
+        bt_gravar.addEventListener('click',gravarDados);
+  
+function geraResult(){
+    var nometut = document.getElementById("nomet").value;
+    var nomepet = document.getElementById("nomep").value;
+    var data = document.getElementById("data").value;
+    var servico = document.getElementById("servico").value;
+    var obs = document.getElementById("obs").value;
+    var preco = 30;
+    let servicoNome = " ";
+    if (servico=="banho") servicoNome = "Banho";
+    if (servico=="tosah") servicoNome = "Tosa Higiênica";
+    if (servico=="tosagm") servicoNome = "Tosa Geral (máquina)";
+    if (servico=="tosagt") servicoNome = "Tosa Geral (tesoura)";
+    if (servico=="creched") servicoNome = "Creche (diária avulsa)";
+    if (servico=="creches") servicoNome = "Creche (semanal)";
+    if (servico=="crechem") servicoNome = "Creche (mensal)";
+    if (servico=="levatraz") servicoNome = "Leva e Traz (km rodado)";
+    //var preco = lerPreco(servicoNome);
+    let result = [nometut, nomepet, data, servicoNome, obs, preco];
+
+    return result;
+}
+
+        function gravarDados (){
+          console.log ("OK1");
+          /* -------- References ---------- */
+
+          let result = geraResult();
+               const novaChave = push(child(ref(db), 'comprovantes')).key;
+               //const novaChave = 10;
+          console.log ("OK2");
+               set(ref(db, "comprovantes/"+ novaChave),{
+                    NOMETUTOR:result[0],
+                    NOMEPETTY:result[1],
+                    DATASERVICO:result[2],
+                    NOMESERVICO:result[3],
+                    OBSERV:result[4],
+                    PRECOSERVICO:result[5]
+               }).then(()=>{
+                    console.log("incluído com sucesso");
+               })
+               .catch((error)=>{
+                    console.log("erro de inclusão");
+               })
+          }
+          
+          
+    </script>
+</body>
+</html>

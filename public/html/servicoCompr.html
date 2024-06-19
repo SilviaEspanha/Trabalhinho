@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino dos Focinhos</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <script type="text/javascript" src="js/script2.js"></script> 
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Reino dos Focinhos</h2>
+        <h2>Banho e Tosa, Creche, Hospedagem e Adestramento</h2>
+        <h3> Rua Amélia Bueno, 80  -  Campinas/SP  -  Brasil</h3>
+        <figure class="logotipo">
+            <img src="img/logotipo.jpg" width="30%" height="30%" alt="Logo">
+        </figure>
+    </header>
+    <div class="borda">
+        <h3>Preencha o formulário:</h3>
+        <form name="usuario">
+            <input type="text" name="nome_tutor" id="nomet" placeholder="Nome do Tutor" size="40px">
+            <br><br>
+            <input type="text" name="nome_pet" id="nomep"placeholder="Nome do Pet" size="40px">
+            <br><br>
+            <input type="date" id="data">
+            <br><br>
+            <label for="serv">Escolha um serviço:</label>
+            <select name="servico" id="servico">
+                <option value="banho">Banho</option>
+                <option value="tosah">Tosa Higiênica</option>
+                <option value="tosagm">Tosa Geral Máquina</option>
+                <option value="tosagt">Tosa Geral Tesoura</option>
+                <option value="creched">Creche (diária)</option>
+                <option value="creches">Creche (semanal)</option>
+                <option value="crechem">Creche (mensal)</option>
+                <option value="levatraz">Leva e Traz</option>
+            </select><br><br>          
+            <input type="text" name="obs" id="obs" value="Obs: " size="40px">
+            <br><br>
+            <input type=button value="Exibir" onclick="exibir()">      
+        </form>
+    </div>
+    <div class="borda">
+        <h3>Serviço a ser realizado:</h3>
+        <div id="result">
+     
+        </div> 
+        <input type="submit" value="Gravar" id="Gravar" onclick="gravar()" disabled>
+        <input type="submit" value="Descartar" id="Descartar"onclick="descartar()">
+    </div>
+    <footer>
+        <h3>Contatos:</h3>
+        <container class="contato">
+            <ul>
+                <li>Celular: (19) 9 8947 6402</li>
+                <li>e-mail: reinodosfocinhos@gmail.com</li>
+                <li>Redes sociais: facebook e instagram</li>
+            </ul>
+            <br>
+        </container>
+    </footer>
+</body>
+</html>

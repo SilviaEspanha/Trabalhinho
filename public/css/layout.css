@@ -1,0 +1,42 @@
+body {
+	display: grid;
+	font-family: Arial, sans-serif;
+	grid-gap: 1rem;
+	grid-template-areas:
+	  "header header header"
+	  "nav main main"
+	  "footer footer footer";
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto auto;
+	background-color:rgb(192, 217, 240);
+}
+   
+.o-header {
+	grid-area: header;
+	padding: 1rem;
+	text-align: center;
+}
+   
+.o-nav {
+	grid-area: nav;
+}
+   
+.o-main {
+	grid-area: main;
+}
+   
+.o-footer {
+	grid-area: footer;
+	padding: 0.5rem;
+}
+   
+.o-header, .o-footer {
+	background-color:rgb(165, 197, 223);
+	color: blue;
+}
+
+.o-nav, .o-main {
+	background-color:rgb(167, 213, 250);
+	color: blue;
+ }
+   
